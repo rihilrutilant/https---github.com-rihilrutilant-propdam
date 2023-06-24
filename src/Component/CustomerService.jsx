@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import "../Style/CustomerService.css";
 const CustomerService = () => {
   return (
-    <div>CustomerService</div>
-  )
-}
+    <div>
+     
+    </div>
+  );
+};
 
-export default CustomerService
+export default CustomerService;
