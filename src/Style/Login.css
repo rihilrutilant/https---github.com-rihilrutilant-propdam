@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.t-and-c{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.container123 {
+    /* max-width:1240px !important; */
+    margin: 10% auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.logo {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.form-width {
+    text-align: center;
+
+}
+
+form input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+form input[type="text"]:hover {
+    box-shadow: rgba(90, 160, 246, 0.3) 0px 0px 0px 4px;
+}
+
+form input[type="checkbox"] {
+    background-color: red;
+}
+
+.sentopt-btn {
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px 50px;
+    background-color: red;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.create-btn {
+    background-color: red;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+form span {
+    color: gray;
+}
