@@ -1,0 +1,41 @@
+.nav-img {
+    width: 70%;
+}
+
+.nav-img img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.flex-nav {
+    width: 100%;
+    display: flex;
+}
+
+.nav-right {
+    width: 30%;
+}
+
+.inner-text-nav {
+    font-size: 22px;
+    color: #000;
+    font-family: 'Mulish', sans-serif;
+}
+
+.container-fluid {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+header .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.second-nav{
+    width: 100%;
+}
