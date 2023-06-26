@@ -3,17 +3,30 @@
   width: 100%;
   background-color: #65656dc4;
 }
+
+.footer_top {
+  background: rgba(215, 39, 39, 0.61);
+}
+
 .inner-main-fpart {
   align-items: center;
-  /* height: 94px; */
-  background: rgba(215, 39, 39, 0.61);
+  padding: 15px 0;
   display: flex;
   justify-content: space-between;
+}
+
+.Propdam-part :hover {
+  color: orange;
+  text-decoration: none;
+}
+.Company-part :hover {
+  color: orange;
+  text-decoration: none;
 }
 .in-text {
   margin: 6px 20px 0px 0;
 }
-.m-in {
+.inner-main-fpart .m-in {
   display: flex;
   justify-content: space-between;
 }
@@ -102,7 +115,7 @@
   font-weight: 800;
 }
 .p-h3 {
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 16px;
 }
 .play-f-img {
@@ -128,10 +141,10 @@
   color: black;
   font-weight: 800;
 }
-.logo {
-  max-width: 216px;
+.inner-main-fpart .p_logo {
+  max-width: 195px;
   width: 100%;
-  height: 77px;
+  height: 65px;
 }
 .sub-btn {
   max-width: 266px;
@@ -144,11 +157,26 @@
   border: none;
   border-radius: 9px;
 }
+
+@media screen and (max-width: 1119px) {
+  .inner-info {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    justify-content: space-between;
+    padding-bottom: 60px;
+  }
+}
+
 @media screen and (max-width: 1072px) {
-  .logo {
+  .inner-main-fpart .p_logo {
     max-width: 166px;
     width: 100%;
-    height: 77px;
+    height: 65px;
   }
   .in-text {
     font-size: 24px;
@@ -174,20 +202,20 @@
   }
 }
 @media screen and (max-width: 945px) {
-  .logo {
+  .inner-main-fpart .p_logo {
     max-width: 195px;
     width: 100%;
-    height: 77px;
+    height: 65px;
   }
   .in-text {
     font-size: 22px;
   }
 }
 @media screen and (max-width: 753px) {
-  .logo {
+  .inner-main-fpart .p_logo {
     max-width: 185px;
     width: 100%;
-    height: 77px;
+    height: 65px;
   }
   .in-text {
     font-size: 22px;
@@ -195,10 +223,10 @@
   }
 }
 @media screen and (max-width: 691px) {
-  .logo {
+  .inner-main-fpart .p_logo {
     max-width: 175px;
     width: 100%;
-    height: 77px;
+    height: 65px;
   }
   .in-text {
     font-size: 20px;
@@ -232,29 +260,54 @@
     margin-top: 6px;
   }
 }
+
+@media screen and (max-width: 685px) {
+  .inner-info {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 50px;
+    justify-content: center;
+    padding-bottom: 60px;
+  }
+}
+
 @media screen and (max-width: 570px) {
   .inner-main-fpart {
     align-items: center;
-    /* height: 100px; */
     flex-direction: column;
     display: flex;
     justify-content: center;
   }
-  .logo {
+  .inner-main-fpart .p_logo {
     max-width: 188px;
     width: 100%;
-    height: 77px;
+    height: 65px;
     margin-bottom: 5px;
   }
-  .m-in {
-    margin-bottom: 2px;
+  .inner-main-fpart .m-in {
+    padding: 10px 0;
+  }
+  .sub-inner p {
+    font-size: 16px;
+    color: black;
+    font-weight: 800;
+  }
+  .in1 {
+    max-width: 189px;
+    width: 100%;
+    height: 39px;
+    outline: none;
   }
 }
 @media screen and (max-width: 430px) {
-  .logo {
+  .inner-main-fpart .p_logo {
     max-width: 159px;
     width: 100%;
-    height: 77px;
+    height: 65px;
   }
   .in-text {
     font-size: 18px;
@@ -281,6 +334,13 @@
   .yt {
     margin-top: 4px;
   }
-}
-@media screen and (max-width: 1119px) {
+  .p-h3 {
+    font-weight: 800;
+    font-size: 22px;
+  }
+
+  .Contact-us-part p {
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
