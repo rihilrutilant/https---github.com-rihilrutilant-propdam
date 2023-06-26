@@ -1,0 +1,286 @@
+.main-f {
+  max-width: 1910px;
+  width: 100%;
+  background-color: #65656dc4;
+}
+.inner-main-fpart {
+  align-items: center;
+  /* height: 94px; */
+  background: rgba(215, 39, 39, 0.61);
+  display: flex;
+  justify-content: space-between;
+}
+.in-text {
+  margin: 6px 20px 0px 0;
+}
+.m-in {
+  display: flex;
+  justify-content: space-between;
+}
+.in-fb {
+  width: 42px;
+  border-radius: 104%;
+  background: white;
+  height: 42px;
+  margin: auto 0;
+  align-items: center;
+  text-align: center;
+  margin-right: 10px;
+}
+.in-insta {
+  width: 42px;
+  border-radius: 104%;
+  background: white;
+  height: 42px;
+  margin: auto 0;
+  align-items: center;
+  text-align: center;
+  margin-right: 10px;
+}
+.in-yt {
+  width: 42px;
+  border-radius: 104%;
+  background: white;
+  height: 42px;
+  margin: auto 0;
+  align-items: center;
+  text-align: center;
+  margin-right: 10px;
+}
+.fb {
+  background: none;
+  outline: none;
+  border: none;
+  margin-top: 9px;
+}
+.insta {
+  background: none;
+  outline: none;
+  border: none;
+  margin-top: 9px;
+}
+.yt {
+  background: none;
+  outline: none;
+  border: none;
+  margin-top: 9px;
+}
+.insta svg {
+  color: rgb(253, 169, 79);
+}
+.yt svg {
+  color: rgb(253, 169, 79);
+}
+.fb svg {
+  color: rgb(253, 169, 79);
+}
+.inner-info {
+  max-width: 1296px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 60px;
+}
+.Propdam-part p {
+  color: #212529;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+.Contact-us-part p {
+  color: #212529;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+.Company-part p {
+  color: #212529;
+  margin: 0 !important;
+  font-size: 16px;
+  font-weight: 800;
+}
+.p-h3 {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.play-f-img {
+  max-width: 160px;
+  height: 47px;
+  margin-bottom: 18px;
+}
+.sub-inner {
+  background: rgba(215, 39, 39, 0.61);
+  box-shadow: rgba(0, 0, 0, 0.53) 0px 0px 35px;
+  max-width: 306px;
+  width: 100%;
+  padding: 20px 20px 10px;
+}
+.in1 {
+  max-width: 189px;
+  width: 100%;
+  height: 48px;
+  outline: none;
+}
+.sub-inner p {
+  font-size: 18px;
+  color: black;
+  font-weight: 800;
+}
+.logo {
+  max-width: 216px;
+  width: 100%;
+  height: 77px;
+}
+.sub-btn {
+  max-width: 266px;
+  width: 100%;
+  height: 48px;
+  background: rgb(255, 61, 0);
+  color: white;
+  outline: none;
+  margin-top: 16px;
+  border: none;
+  border-radius: 9px;
+}
+@media screen and (max-width: 1072px) {
+  .logo {
+    max-width: 166px;
+    width: 100%;
+    height: 77px;
+  }
+  .in-text {
+    font-size: 24px;
+    margin: 6px 20px 0px 0;
+  }
+  .in-fb {
+    width: 39px;
+    border-radius: 104%;
+    background: white;
+    height: 39px;
+  }
+  .in-insta {
+    width: 39px;
+    border-radius: 104%;
+    background: white;
+    height: 39px;
+  }
+  .in-yt {
+    width: 39px;
+    border-radius: 104%;
+    background: white;
+    height: 39px;
+  }
+}
+@media screen and (max-width: 945px) {
+  .logo {
+    max-width: 195px;
+    width: 100%;
+    height: 77px;
+  }
+  .in-text {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 753px) {
+  .logo {
+    max-width: 185px;
+    width: 100%;
+    height: 77px;
+  }
+  .in-text {
+    font-size: 22px;
+    margin: 6px 12px 0px 0;
+  }
+}
+@media screen and (max-width: 691px) {
+  .logo {
+    max-width: 175px;
+    width: 100%;
+    height: 77px;
+  }
+  .in-text {
+    font-size: 20px;
+    margin: 5px 12px 0px 0;
+  }
+  .in-fb {
+    width: 33px;
+    border-radius: 104%;
+    background: white;
+    height: 33px;
+  }
+  .in-insta {
+    width: 33px;
+    border-radius: 104%;
+    background: white;
+    height: 33px;
+  }
+  .in-yt {
+    width: 33px;
+    border-radius: 104%;
+    background: white;
+    height: 33px;
+  }
+  .fb {
+    margin-top: 6px;
+  }
+  .insta {
+    margin-top: 6px;
+  }
+  .yt {
+    margin-top: 6px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .inner-main-fpart {
+    align-items: center;
+    /* height: 100px; */
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+  .logo {
+    max-width: 188px;
+    width: 100%;
+    height: 77px;
+    margin-bottom: 5px;
+  }
+  .m-in {
+    margin-bottom: 2px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .logo {
+    max-width: 159px;
+    width: 100%;
+    height: 77px;
+  }
+  .in-text {
+    font-size: 18px;
+    margin: 5px 9px 0px 0;
+  }
+  .in-fb {
+    width: 29px;
+    height: 29px;
+  }
+  .in-insta {
+    width: 29px;
+    height: 29px;
+  }
+  .in-yt {
+    width: 29px;
+    height: 29px;
+  }
+  .fb {
+    margin-top: 4px;
+  }
+  .insta {
+    margin-top: 4px;
+  }
+  .yt {
+    margin-top: 4px;
+  }
+}
+@media screen and (max-width: 1119px) {
+}

@@ -3,6 +3,8 @@ import Home from "./Component/Home";
 import Login from "./Component/Login";
 import CustomerService from "./Component/CustomerService";
 import Plans from "./Component/Plans";
+import Demo from "./Component/Demo";
+import Footer from "./Component/Footer";
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/customerService" element={<CustomerService />} />
         <Route path="/plans" element={<Plans />} />
+        <Route path="/demo" element={<Demo />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
 
