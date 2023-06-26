@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import "../Style/Plans.css";
+import Footer from "./Footer";
 
 const Plans = () => {
   return (
@@ -12,8 +13,8 @@ const Plans = () => {
           <div className="cards_section container-fluid">
             <div className="card">
               <div className="card_top">
-                <div class="listing-badges">
-                  <span class="featured">Featured</span>
+                <div className="listing-badges">
+                  <span className="featured">Featured</span>
                 </div>
                 <p>Gold</p>
                 <h1>₹ 3999.00</h1>
@@ -35,8 +36,8 @@ const Plans = () => {
             </div>
             <div className="card">
               <div className="card_top">
-                <div class="listing-badges">
-                  <span class="featured">Featured</span>
+                <div className="listing-badges">
+                  <span className="featured">Featured</span>
                 </div>
                 <p>Diamond</p>
                 <h1>₹ 6999.00</h1>
@@ -58,8 +59,8 @@ const Plans = () => {
             </div>
             <div className="card">
               <div className="card_top">
-                <div class="listing-badges">
-                  <span class="featured">Featured</span>
+                <div className="listing-badges">
+                  <span className="featured">Featured</span>
                 </div>
                 <p>Platinum</p>
                 <h1>₹ 12999.00</h1>
@@ -82,6 +83,7 @@ const Plans = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

@@ -1,6 +1,8 @@
 //https://propdam.mhindia.in/
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "../Style/Login.css"
+import Footer from './Footer'
 import Navbar from './Navbar'
 
 const Login = () => {
@@ -8,7 +10,7 @@ const Login = () => {
     <>
       <Navbar />
       <div className="container123">
-        <div className='logo'>
+        <div className='logo1234'>
           <img src={require('../Assets/R.png')} alt="" srcset="" />
         </div>
         <div className='form-width '>
@@ -24,11 +26,12 @@ const Login = () => {
               <button className='sentopt-btn'>Sent otp</button>
             </div>
             <div className='p-3 mt-4'>
-              <span>Don't have an account?</span> <button className='create-btn'>Create new</button>
+              <span>Don't have an account?</span> <Link to='/register'><button className='create-btn'>Create new</button></Link>
             </div>
           </form>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

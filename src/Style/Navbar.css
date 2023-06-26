@@ -66,13 +66,15 @@
     transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover {
-    color: #117964;
+.active {
+    background-color: #FCAA50;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 @media (max-width: 768px) {
 
-    .menu-items{
+    .menu-items {
         order: 0 !important;
     }
 

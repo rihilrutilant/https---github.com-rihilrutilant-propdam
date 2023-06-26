@@ -1,29 +1,68 @@
-import React, { useState } from "react";
-import data from "../data.json";
-const Demo = () => {
-  const [search, setSearch] = useState("");
-  return (
-    <div>
-      <div style={{ margin: "100px" }}>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        {data
-          .filter((list) => {
-            return search.toLowerCase().startsWith("s")
-              ? list.name.toLowerCase().includes(search)
-              : false;
-          })
+import React, { useState } from 'react';
+import { render } from 'react-dom';
+import { COUNTRIES } from './countries';
+import './style.css';
+import { WithContext as ReactTags } from 'react-tag-input';
 
-          .map((list) => {
-            return (
-              <div className="box" key={list.id}>
-                <h3> {list.name} </h3>
-              </div>
-            );
-          })}
+const suggestions = COUNTRIES.map(country => {
+  return {
+    id: country,
+    text: country
+  };
+});
+
+const KeyCodes = {
+  comma: 188,
+  enter: 13
+};
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
+
+const Demo = () => {
+  const [tags, setTags] = React.useState([
+    { id: 'Thailand', text: 'Thailand' },
+    { id: 'India', text: 'India' },
+    { id: 'Vietnam', text: 'Vietnam' },
+    { id: 'Turkey', text: 'Turkey' }
+  ]);
+
+  const handleDelete = i => {
+    setTags(tags.filter((tag, index) => index !== i));
+  };
+
+  const handleAddition = tag => {
+    setTags([...tags, tag]);
+  };
+
+  const handleDrag = (tag, currPos, newPos) => {
+    const newTags = tags.slice();
+
+    newTags.splice(currPos, 1);
+    newTags.splice(newPos, 0, tag);
+
+    // re-render
+    setTags(newTags);
+  };
+
+  const handleTagClick = index => {
+    console.log('The tag at index ' + index + ' was clicked');
+  };
+
+  return (
+    <div className="app">
+      <h1> React Tags Example </h1>
+      <div>
+        <ReactTags
+          tags={tags}
+          suggestions={suggestions}
+          delimiters={delimiters}
+          handleDelete={handleDelete}
+          handleAddition={handleAddition}
+          handleDrag={handleDrag}
+          handleTagClick={handleTagClick}
+          inputFieldPosition="bottom"
+          autocomplete
+        />
       </div>
     </div>
   );

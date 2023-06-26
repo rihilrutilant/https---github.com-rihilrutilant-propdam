@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import "../Style/CustomerService.css";
 const CustomerService = () => {
   return (
@@ -29,6 +30,7 @@ const CustomerService = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

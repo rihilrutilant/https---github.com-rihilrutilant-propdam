@@ -1,9 +1,13 @@
 [
-  { "id": 1, "name": "saveghkjklghjg" },
-  { "id": 2, "name": "saveghkjkfgbhbcvblghjg" },
-  { "id": 3, "name": "saveghkjkdgsdfxcvlghjg" },
-  { "id": 4, "name": "saveghksdefsdfsfjklghjg" },
-  { "id": 5, "name": "savexfbvcvbghkjklghjg" },
-  { "id": 6, "name": "saveghbnbnbcvnjklghjg" },
-  { "id": 7, "name": "sxvxcbvxcaveghkjklghjg" }
+  { "id": 1, "name": "Sector 42 Gugurugram" },
+  { "id": 2, "name": "Sector 43 Gugurugram" },
+  { "id": 3, "name": "Sector 44 Gugurugram" },
+  { "id": 4, "name": "Sector 45 Gugurugram" },
+  { "id": 5, "name": "Sector 46 Gugurugram" },
+  { "id": 6, "name": "Sector 47 Gugurugram" },
+  { "id": 7, "name": "Sector 48 Gugurugram" },
+  { "id": 8, "name": "DFL-1 Gugurugram"},
+  { "id": 9, "name": "DFL-2 Gugurugram"},
+  { "id": 10, "name": "DFL-3 Gugurugram"},
+  { "id": 11, "name": "DFL-4 Gugurugram"}
 ]

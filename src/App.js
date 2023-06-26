@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Component/Home";
 import Login from "./Component/Login";
+import Register from "./Component/Register";
 import CustomerService from "./Component/CustomerService";
 import Plans from "./Component/Plans";
 import Demo from "./Component/Demo";
@@ -14,8 +15,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/customerService" element={<CustomerService />} />
         <Route path="/plans" element={<Plans />} />
-        <Route path="/demo" element={<Demo />} />
-        <Route path="/footer" element={<Footer />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/demo" element={<Demo />} /> 
+        <Route path="/footer" element={<Footer />} /> 
       </Routes>
     </BrowserRouter>
   );

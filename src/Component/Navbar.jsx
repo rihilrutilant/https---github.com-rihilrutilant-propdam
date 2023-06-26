@@ -1,23 +1,23 @@
 import React from 'react'
 import "../Style/Navbar.css"
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
 
 
     return (
-        <nav class="navbar">
-            <div class="navbar-container container">
+        <nav className="navbar">
+            <div className="navbar-container container">
                 <input type="checkbox" name="" id="" />
-                <div class="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
+                <div className="hamburger-lines">
+                    <span className="line line1"></span>
+                    <span className="line line2"></span>
+                    <span className="line line3"></span>
                 </div>
-                <ul class="menu-items">
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/CustomerService">Customer Service</Link></li>
-                    <li><Link to="/plans">Plans</Link></li>
+                <ul className="menu-items">
+                    <li><NavLink to="/login" activeClassName='active'>Login</NavLink></li>
+                    <li><NavLink to="/CustomerService" activeClassName='active'>Customer Service</NavLink></li>
+                    <li><NavLink to="/plans" activeClassName='active'>Plans</NavLink></li>
                 </ul>
                 <Link to='/'><img src={require("../Assets/R.png")} alt="" className="logo123" /></Link>
             </div>
