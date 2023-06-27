@@ -27,7 +27,6 @@
 .all-btns:hover {
     background-color: #FDA94F;
     text-decoration: none;
-    color: #FFF;
 }
 
 .banner-img img {
@@ -72,9 +71,9 @@
     border: 0;
     border-radius: 10px;
     width: 100%;
-    max-width: 490px;
-    padding: 10px;
+    max-width: 460px;
     outline: none;
+    height: 43px;
 }
 
 .search {
@@ -107,13 +106,15 @@
     display: none;
 }
 
-.all-data {
-    color: black;
-    text-align: center;
-    width: 100%;
-    max-width: 250px;
-    background-color: #FFF;
-    margin: 4px auto;
-    border-radius: 7px;
-    padding: 10px;
+.none-home {
+    display: none;
 }
+
+/* .css-13cymwt-control {
+    height: 43px;
+} */
+
+/* .css-t3ipsp-control {
+    height: 43px;
+    outline: none;
+} */

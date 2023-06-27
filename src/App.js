@@ -6,6 +6,7 @@ import CustomerService from "./Component/CustomerService";
 import Plans from "./Component/Plans";
 import Demo from "./Component/Demo";
 import Footer from "./Component/Footer";
+import Filter from "./Component/Filter";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/plans" element={<Plans />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/demo" element={<Demo />} /> 
+        <Route path="/Filter" element={<Filter />} /> 
         <Route path="/footer" element={<Footer />} /> 
       </Routes>
     </BrowserRouter>
