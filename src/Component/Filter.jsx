@@ -1,17 +1,231 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../Style/Filter.css'
 import Navbar2 from './Navbar2'
+import PropertyCard from './Property';
+
 function Filter() {
+
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [propertiesPerPage] = useState(10); // Number of properties to display per page
+
+    // Assuming you have an array of property data
+    const properties = [
+        {
+            id: 1,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '1.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/banner.jpg')
+        },
+        {
+            id: 2,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '2.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/first.jpeg')
+        },
+        {
+            id: 3,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '3.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/ios.png')
+        },
+        {
+            id: 4,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '4.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/Play.png')
+        },
+        {
+            id: 5,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '5.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/R.png')
+        },
+        {
+            id: 6,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '6.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/second.jpeg')
+        },
+        {
+            id: 7,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '7.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/banner.jpg')
+        },
+        {
+            id: 8,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '8.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/first.jpeg')
+        },
+        {
+            id: 9,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '9.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/ios.png')
+        },
+        {
+            id: 10,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '10.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/Play.png')
+        },
+        {
+            id: 11,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '11.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/R.png')
+        },
+        {
+            id: 12,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '12.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/second.jpeg')
+        },
+        {
+            id: 13,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '13.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/banner.jpg')
+        },
+        {
+            id: 14,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '14.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/first.jpeg')
+        },
+        {
+            id: 15,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '15.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/ios.png')
+        },
+        {
+            id: 16,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '16.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/Play.png')
+        },
+        {
+            id: 17,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '17.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/R.png')
+        },
+        {
+            id: 18,
+            location: 'sector 42 gurugram',
+            name: 'adani m2k oyster grande',
+            price: '18.80 Lac',
+            pricePerSqft: '3312.00/sq/ft.',
+            size: '368 Sqyard',
+            superBuiltUpArea: '307.69 Super built-up Area',
+            photo: require('../Assets/second.jpeg')
+        },
+        // Add more property objects here
+    ];
+
+    // Logic for displaying properties
+    const indexOfLastProperty = currentPage * propertiesPerPage;
+    const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
+    const currentProperties = properties.slice(indexOfFirstProperty, indexOfLastProperty);
+
+    // Calculate total number of pages
+    const totalPages = Math.ceil(properties.length / propertiesPerPage);
+
+    // Change page
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    };
+
     return (
         <>
-            <Navbar2/>
+            <Navbar2 />
             <section className='section-y'>
                 <div className="container12">
                     <div className='flex'>
+
+                        {/* Filter */}
+
                         <div className='sidebar'>
                             <div className='flex justify-content align-items'>
                                 <h6 className='a-f'>Applied Filters</h6>
-                                <a href="#">clear all</a>
+                                <Link to="#">clear all</Link>
                             </div>
                             <div className=''>
                                 <button>sector 47 gurgaon</button>
@@ -35,28 +249,28 @@ function Filter() {
                             <hr />
                             <h6>Property Type</h6>
                             <div className='property-btn'>
-                                <button> <i class="fa-solid fa-bars-staggered"></i>Residential Apartment</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>Builder Floor</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>Residential Land</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>Independent House/Villa</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>1 RK/ Studio Apartment</button>
+                                <button> <i className="fa-solid fa-bars-staggered"></i>Residential Apartment</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>Builder Floor</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>Residential Land</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>Independent House/Villa</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>1 RK/ Studio Apartment</button>
                             </div>
                             <hr />
                             <h6>No. of Bedrooms</h6>
                             <div className='bedrooms-btn'>
-                                <button><i class="fa-solid fa-bars-staggered"></i>1Rk/ 1Bhk</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>2Bhk</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>3Bhk</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>4Bhk</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>5Bhk</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>1Rk/ 1Bhk</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>2Bhk</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>3Bhk</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>4Bhk</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>5Bhk</button>
                             </div>
                             <hr />
                             <h6>Posted by</h6>
                             <div className='posted-btn'>
-                                <button> <i class="fa-solid fa-bars-staggered "></i>owner</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>builder</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>dealer</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>feature dealer</button>
+                                <button> <i className="fa-solid fa-bars-staggered "></i>owner</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>builder</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>dealer</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>feature dealer</button>
                             </div>
                             <hr />
                             <div>
@@ -72,12 +286,15 @@ function Filter() {
                             <hr />
                             <h6>Localities</h6>
                             <div className='posted-btn'>
-                                <button> <i class="fa-solid fa-bars-staggered "></i>owner</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>builder</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>dealer</button>
-                                <button><i class="fa-solid fa-bars-staggered"></i>feature dealer</button>
+                                <button> <i className="fa-solid fa-bars-staggered "></i>owner</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>builder</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>dealer</button>
+                                <button><i className="fa-solid fa-bars-staggered"></i>feature dealer</button>
                             </div>
                         </div>
+
+                        {/* Filter */}
+
                         <div className='right-card'>
                             <div className='category-btn'>
                                 <button>all</button>
@@ -86,82 +303,23 @@ function Filter() {
                                 <button>under construcation</button>
                                 <button>ready to move</button>
                             </div>
-                            <div className='flex mt-3'>
-                                <div className='img-card'>
-                                    <div className='card-pic'>
-                                        <img src={require('../Assets/banner.jpg')} alt="" className='img-fluid' srcset="" />
-                                    </div>
-                                </div>
-                                <div className='card-information'>
-                                    <a href="#">sector 42 gurugram</a>
-                                    <p>adani m2k oyster grande</p>
-                                    <div className='flex gap'>
-                                        <div>
-                                            <h6 className='text-center'>1.80 Lac</h6>
-                                            <span>3312.00/sq/ft.</span>
-                                        </div>
-                                        <div>
-                                            <h6 className='text-center'>368 Sqyard </h6>
-                                            <span>307.69 Super built-up Area</span>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div className='flex justify-content align-items mt-3'>
-                                        <button className='btn-contact2'>view phone number</button>
-                                        <button className='btn-contact1'>contact dealer</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='flex mt-3'>
-                                <div className='img-card'>
-                                    <div className='card-pic'>
-                                        <img src={require('../Assets/banner.jpg')} alt="" className='img-fluid' srcset="" />
-                                    </div>
-                                </div>
-                                <div className='card-information'>
-                                    <a href="#">sector 42 gurugram</a>
-                                    <p>adani m2k oyster grande</p>
-                                    <div className='flex gap'>
-                                        <div>
-                                            <h6 className='text-center'>1.80 Lac</h6>
-                                            <span>3312.00/sq/ft.</span>
-                                        </div>
-                                        <div>
-                                            <h6 className='text-center'>368 Sqyard </h6>
-                                            <span>307.69 Super built-up Area</span>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div className='flex justify-content align-items mt-3'>
-                                        <button className='btn-contact2'>view phone number</button>
-                                        <button className='btn-contact1'>contact dealer</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='flex mt-3'>
-                                <div className='img-card'>
-                                    <div className='card-pic'>
-                                        <img src={require('../Assets/banner.jpg')} alt="" className='img-fluid' srcset="" />
-                                    </div>
-                                </div>
-                                <div className='card-information'>
-                                    <a href="#">sector 42 gurugram</a>
-                                    <p>adani m2k oyster grande</p>
-                                    <div className='flex gap'>
-                                        <div>
-                                            <h6 className='text-center'>1.80 Lac</h6>
-                                            <span>3312.00/sq/ft.</span>
-                                        </div>
-                                        <div>
-                                            <h6 className='text-center'>368 Sqyard </h6>
-                                            <span>307.69 Super built-up Area</span>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                    <div className='flex justify-content align-items mt-3'>
-                                        <button className='btn-contact2'>view phone number</button>
-                                        <button className='btn-contact1'>contact dealer</button>
-                                    </div>
+
+                            <div>
+                                {currentProperties.map((property) => (
+                                    <PropertyCard key={property.id} property={property} />
+                                ))}
+
+                                {/* Pagination */}
+                                <div className="pagination">
+                                    {Array.from({ length: totalPages }).map((_, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => paginate(index + 1)}
+                                            className={currentPage === index + 1 ? 'active' : 'pagi'}
+                                        >
+                                            {index + 1}
+                                        </button>
+                                    ))}
                                 </div>
                             </div>
                         </div>

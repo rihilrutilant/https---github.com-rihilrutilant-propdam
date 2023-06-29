@@ -17,9 +17,9 @@ function App() {
         <Route path="/customerService" element={<CustomerService />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/demo" element={<Demo />} /> 
-        <Route path="/Filter" element={<Filter />} /> 
-        <Route path="/footer" element={<Footer />} /> 
+        <Route path="/demo" element={<Demo />} />
+        <Route path="/Filter" element={<Filter />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </BrowserRouter>
   );

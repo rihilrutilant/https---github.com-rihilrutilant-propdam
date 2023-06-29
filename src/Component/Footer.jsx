@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "../Style/Footer.css";
 import a1 from "../Assets/Play.png";
 import { FaFacebookF } from "react-icons/fa";
@@ -8,6 +8,172 @@ import a2 from "../Assets/ios.png";
 import p1 from "../Assets/R.png";
 import { Link } from "react-router-dom";
 const Footer = () => {
+  const ref = useRef()
+  const [FieldValue, setFieldValue] = useState({
+    title: "",
+    img: "",
+    description: ""
+  })
+  const LonchModel = (title) => {
+    if (title === "AU") {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "About Us",
+        img: p1,
+        description: "this is a discription of about us"
+      }));
+    } else if (title === 'CU') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of contact us"
+      }));
+    } else if (title === 'CWU') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Carrers with us"
+      }));
+    } else if (title === 'T&C') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Terms & Conditions"
+      }));
+    } else if (title === 'RI') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Request Info"
+      }));
+    } else if (title === 'FB') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Feedback"
+      }));
+    } else if (title === 'RP') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Report a problem"
+      }));
+    } else if (title === 'TI') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Testimonials"
+      }));
+    } else if (title === 'PP') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Privacy Policy"
+      }));
+    } else if (title === 'SN') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Summons/Notices"
+      }));
+    } else if (title === 'GR') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Grievances"
+      }));
+    } else if (title === 'SG') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Safety Guide"
+      }));
+    }
+    else if (title === 'MA') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Mobile Apps"
+      }));
+    }
+    else if (title === 'UR') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Our Services"
+      }));
+    }
+    else if (title === 'PT') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Price Trends"
+      }));
+    }
+    else if (title === 'BI') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Builder in India"
+      }));
+    }
+    else if (title === 'AC') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Area Converter"
+      }));
+    }
+    else if (title === 'AR') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Articles"
+      }));
+    }
+    else if (title === 'CS') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Customer Services"
+      }));
+    }
+    else if (title === 'ST') {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "Contact Us",
+        img: p1,
+        description: "this is a discription of Sitemap"
+      }));
+    }
+    else {
+      setFieldValue(prevState => ({
+        ...prevState,
+        title: "N/A",
+        img: "N/A",
+        description: "N/A"
+      }));
+    }
+    ref.current.click()
+  }
   return (
     <>
       <section>
@@ -15,7 +181,7 @@ const Footer = () => {
           <div className="footer_top">
             <div className="container-fluid">
               <div className="inner-main-fpart">
-                <img className="p_logo" src={p1} alt="" />
+                <Link to='/'><img className="p_logo" src={p1} alt="" /></Link>
                 <div className="m-in">
                   <h3 className="in-text">FOLLOW US :</h3>
                   <div className="in-fb">
@@ -48,69 +214,29 @@ const Footer = () => {
           <div className="inner-info container-fluid">
             <div className="Propdam-part">
               <h3 className="p-h3">Propdam</h3>
-              <Link>
-                <p>Mobile Apps</p>
-              </Link>
-              <Link>
-                <p>Our Services</p>
-              </Link>
-              <Link>
-                <p>Price Trends</p>
-              </Link>
-              <Link>
-                <p>Builder in India</p>
-              </Link>
-              <Link>
-                <p>Area Converter</p>
-              </Link>
-              <Link>
-                <p>Articles</p>
-              </Link>
-              <Link>
-                <p>Customer Services</p>
-              </Link>
-              <Link>
-                <p>Sitemap</p>
-              </Link>
+              <p onClick={() => LonchModel('MA')}>Mobile Apps</p>
+              <p onClick={() => LonchModel('UR')}>Our Services</p>
+              <p onClick={() => LonchModel('PT')}>Price Trends</p>
+              <p onClick={() => LonchModel('BI')}>Builder in India</p>
+              <p onClick={() => LonchModel('AC')}>Area Converter</p>
+              <p onClick={() => LonchModel('AR')}>Articles</p>
+              <p onClick={() => LonchModel('CS')}>Customer Services</p>
+              <p onClick={() => LonchModel('ST')}>Sitemap</p>
             </div>
             <div className="Company-part">
               <h3 className="p-h3">Company</h3>
-              <Link>
-                <p>About Us</p>
-              </Link>
-              <Link>
-                <p>Contact Us</p>
-              </Link>
-              <Link>
-                <p>Carrers with us</p>
-              </Link>
-              <Link>
-                <p>Terms & Conditions</p>
-              </Link>
-              <Link>
-                <p>Request Info</p>
-              </Link>
-              <Link>
-                <p>Feedback</p>
-              </Link>
-              <Link>
-                <p>Report a problem</p>
-              </Link>
-              <Link>
-                <p>Testimonials</p>
-              </Link>
-              <Link>
-                <p>Privacy Policy</p>
-              </Link>
-              <Link>
-                <p>Summons/Notices</p>
-              </Link>
-              <Link>
-                <p>Grievances</p>
-              </Link>
-              <Link>
-                <p>Safety Guide</p>
-              </Link>
+              <p onClick={() => LonchModel('AU')}>About Us</p>
+              <p onClick={() => LonchModel('CU')}>Contact Us</p>
+              <p onClick={() => LonchModel('CWU')}>Carrers with us</p>
+              <p onClick={() => LonchModel('T&C')}>Terms & Conditions</p>
+              <p onClick={() => LonchModel('RI')}>Request Info</p>
+              <p onClick={() => LonchModel('FB')}>Feedback</p>
+              <p onClick={() => LonchModel('RP')}>Report a problem</p>
+              <p onClick={() => LonchModel('TI')}>Testimonials</p>
+              <p onClick={() => LonchModel('PP')}>Privacy Policy</p>
+              <p onClick={() => LonchModel('SN')}>Summons/Notices</p>
+              <p onClick={() => LonchModel('GR')}>Grievances</p>
+              <p onClick={() => LonchModel('SG')}>Safety Guide</p>
             </div>
             <div className="Contact-us-part">
               <h3 className="p-h3">Contact Us</h3>
@@ -144,6 +270,36 @@ const Footer = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      <div>
+        <div>
+          <button style={{ display: "none" }} ref={ref} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+          </button>
+          <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">{FieldValue.title}</h1>
+                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                </div>
+                <div className="modal-body">
+                  <img style={{ width: "100px" }} src={FieldValue.img} alt="img" />
+                  <br />
+                  <br />
+                  {FieldValue.description}
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Modal */}
+
     </>
   );
 };

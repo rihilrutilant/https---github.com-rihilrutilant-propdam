@@ -31,12 +31,19 @@
 
 .banner-img img {
     width: 100%;
+    height: 670px;
 }
 
 .bottom-side {
     position: absolute;
-    top: 36%;
+    top: 37%;
     width: 100%;
+    padding: 0 15px;
+}
+
+.dp {
+    height: 200px;
+    overflow: scroll;
 }
 
 .display-flex-bottom {
@@ -44,7 +51,8 @@
     justify-content: center;
     width: 100%;
     gap: 5px;
-    margin-top: 4px;
+    margin-top: 12px;
+    align-items: baseline;
 }
 
 .form-group {
@@ -61,10 +69,12 @@
 
 .selectbox {
     border: none;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
     cursor: pointer;
     outline: none !important;
+    height: 39px;
+    color: black;
 }
 
 .search-p {
@@ -78,10 +88,12 @@
 
 .search {
     border: none;
-    padding: 10px;
+    padding: 6px;
     border-radius: 10px;
     background: orange;
     cursor: pointer;
+    height: 39px;
+    color: #000;
 }
 
 .slider-img {
@@ -96,6 +108,7 @@
     gap: 20px;
     align-items: center;
     padding: 0 10px;
+    overflow-x: hidden;
 }
 
 .image-slider {
@@ -110,11 +123,58 @@
     display: none;
 }
 
-/* .css-13cymwt-control {
-    height: 43px;
-} */
+@media (max-width: 768px) {
+    .all-btns {
+        padding: 7px;
+        font-size: 12px;
+    }
 
-/* .css-t3ipsp-control {
-    height: 43px;
-    outline: none;
-} */
+    .selectbox {
+        font-size: 12px;
+    }
+
+    .search-p {
+        margin: 0 auto;
+    }
+
+    .bottom-side {
+        top: 36%;
+    }
+
+    .search {
+        width: 100%;
+        max-width: 60px;
+        font-size: 14px;
+        height: 38px;
+    }
+
+    .selectbox {
+        height: 50px;
+    }
+
+    .upper-home {
+        gap: 5px !important;
+    }
+
+    .search-p {
+        max-width: 275px;
+    }
+}
+
+@media (max-width: 375px) {
+    .all-btns {
+        font-size: 11px;
+    }
+
+    .selectbox {
+        height: 68px;
+    }
+}
+
+.upper-home {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 460px;
+}

@@ -1,33 +1,114 @@
-//https://propdam.mhindia.in/
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "../Style/Login.css"
-import Footer from './Footer'
-import Navbar from './Navbar'
+import React, { useRef, useState } from 'react'
+import '../Style/Login.css'
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Login = () => {
+  const [otp, setOtp] = useState(['', '', '', '']);
+  const inputRefs = useRef([]);
+  const handleChange = (e, index) => {
+    const value = e.target.value;
+    setOtp((prevOtp) => {
+      const newOtp = [...prevOtp];
+      newOtp[index] = value;
+      return newOtp;
+    });
+    if (value !== '') {
+      if (index < inputRefs.current.length - 1) {
+        inputRefs.current[index + 1].focus();
+      }
+    } else {
+      if (index > 0) {
+        inputRefs.current[index - 1].focus();
+      }
+    }
+  };
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasteData = e.clipboardData.getData('text/plain').slice(0, 4);
+    const newOtp = [...otp];
+    for (let i = 0; i < pasteData.length; i++) {
+      newOtp[i] = pasteData[i];
+    }
+    setOtp(newOtp);
+  };
+  const [showOtpInput, setShowOtpInput] = useState(false);
+  const handleSendOtp = (e) => {
+    e.preventDefault();
+    setShowOtpInput(true);
+  };
+  const [mobile, setmobile] = useState()
+  const GetMobileNo = (e) => {
+    setmobile(e.target.value)
+  }
+  const VerifyOtp = (e) => {
+    e.preventDefault();
+    console.log(mobile, otp.join(''))
+    SetToken()
+  }
+  const SetToken = () => {
+    localStorage.setItem('token', '<PASSWORD>')
+    window.location.href = '/dashboard'
+  }
   return (
     <>
       <Navbar />
       <div className="container123">
         <div className='logo1234'>
-          <img src={require('../Assets/R.png')} alt="" srcset="" />
+          <img src={require('../Assets/R.png')} alt=" " srcSet=" " />
         </div>
         <div className='form-width '>
-          <form>
-            <div>
-              <input type="text" placeholder="Enter Mobile Number" />
+          <form onSubmit={handleSendOtp}>
+            <div className='input_txt_mo'>
+              <input className='txt-mo' onChange={GetMobileNo} required type="text" placeholder="Enter Mobile Number" />
             </div>
-            <div htmlFor="" className='p-3 t-and-c'>
-              <input type="checkbox" name="" id="" />
-              <span className='ps-2 text-letf'>Terms & Conditions</span>
-            </div>
-            <div className=''>
-              <button className='sentopt-btn'>Sent otp</button>
-            </div>
-            <div className='p-3 mt-4'>
-              <span>Don't have an account?</span> <Link to='/register'><button className='create-btn'>Create new</button></Link>
-            </div>
+            {showOtpInput ?
+              <>
+                <div className='input-otp'>
+                  <input
+                    type="number"
+                    maxLength="1"
+                    required
+                    value={otp[0]}
+                    onChange={(e) => handleChange(e, 0)}
+                    onPaste={handlePaste}
+                    ref={(ref) => (inputRefs.current[0] = ref)}
+                  />
+                  <input
+                    type="number"
+                    maxLength="1"
+                    required
+                    value={otp[1]}
+                    onChange={(e) => handleChange(e, 1)}
+                    onPaste={handlePaste}
+                    ref={(ref) => (inputRefs.current[1] = ref)}
+                  />
+                  <input
+                    type="number"
+                    maxLength="1"
+                    required
+                    value={otp[2]}
+                    onChange={(e) => handleChange(e, 2)}
+                    onPaste={handlePaste}
+                    ref={(ref) => (inputRefs.current[2] = ref)}
+                  />
+                  <input
+                    type="number"
+                    maxLength="1"
+                    required
+                    value={otp[3]}
+                    onChange={(e) => handleChange(e, 3)}
+                    onPaste={handlePaste}
+                    ref={(ref) => (inputRefs.current[3] = ref)}
+                  />
+                </div>
+                <button onClick={VerifyOtp} className='sentopt-btn'>Verify OTP</button>
+              </>
+              :
+              <div>
+                <button type='submit' className='sentopt-btn'>Sent otp</button>
+              </div>
+            }
           </form>
         </div>
       </div>
@@ -35,5 +116,4 @@ const Login = () => {
     </>
   )
 }
-
 export default Login

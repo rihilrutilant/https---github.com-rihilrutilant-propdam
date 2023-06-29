@@ -19,7 +19,7 @@ const Navbar = () => {
                     <li><NavLink to="/CustomerService" activeClassName='active'>Customer Service</NavLink></li>
                     <li><NavLink to="/plans" activeClassName='active'>Plans</NavLink></li>
                 </ul>
-                <Link to='/'><img src={require("../Assets/R.png")} alt="" className="logo123" /></Link>
+                <Link style={{zIndex:"0"}} to='/'><img src={require("../Assets/R.png")} alt="" className="logo123" /></Link>
             </div>
         </nav>
     )
