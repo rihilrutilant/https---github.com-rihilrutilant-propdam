@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import Navbar from './Navbar'
+import React, { useEffect, useState } from 'react'
+import Navbar from '../Component/Navbar'
 import "../Style/Home.css"
 import ImageSlider from './ImageSlider'
-import Footer from './Footer'
+import Footer from '../Component/Footer'
 import data from "../data";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +10,10 @@ import Select from 'react-select'
 import { useNavigate } from 'react-router'
 
 const Home = () => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+}, []);
 
   const [isMenuOpen, setisMenuOpen] = useState(false)
 

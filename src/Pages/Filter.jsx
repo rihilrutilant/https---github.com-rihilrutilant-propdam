@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../Style/Filter.css'
-import Navbar2 from './Navbar2'
-import PropertyCard from './Property';
+import Navbar2 from '../Component/Navbar2'
+import Footer from '../Component/Footer'
+import PropertyCard from '../Pages/Property';
 
 function Filter() {
 
@@ -326,6 +327,7 @@ function Filter() {
                     </div>
                 </div>
             </section>
+            <Footer />  
         </>
     )
 }

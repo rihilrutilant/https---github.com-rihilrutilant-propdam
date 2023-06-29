@@ -1,8 +1,13 @@
-import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import React, { useEffect } from "react";
+import Navbar from "../Component/Navbar";
+import Footer from "../Component/Footer";
 import "../Style/CustomerService.css";
 const CustomerService = () => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <>
       <Navbar />

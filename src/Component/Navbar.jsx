@@ -15,11 +15,11 @@ const Navbar = () => {
                     <span className="line line3"></span>
                 </div>
                 <ul className="menu-items">
-                    <li><NavLink to="/login" activeClassName='active'>Login</NavLink></li>
-                    <li><NavLink to="/CustomerService" activeClassName='active'>Customer Service</NavLink></li>
-                    <li><NavLink to="/plans" activeClassName='active'>Plans</NavLink></li>
+                    <NavLink to="/login" className={({ isActive }) => (isActive ? "active" : 'none')}><li>Login</li></NavLink>
+                    <NavLink to="/CustomerService" className={({ isActive }) => (isActive ? "active" : 'none')}><li>Customer Service</li></NavLink>
+                    <NavLink to="/plans" className={({ isActive }) => (isActive ? "active" : 'none')}><li>Plans</li></NavLink>
                 </ul>
-                <Link style={{zIndex:"0"}} to='/'><img src={require("../Assets/R.png")} alt="" className="logo123" /></Link>
+                <Link style={{ zIndex: "0" }} to='/'><img src={require("../Assets/R.png")} alt="" className="logo123" /></Link>
             </div>
         </nav>
     )

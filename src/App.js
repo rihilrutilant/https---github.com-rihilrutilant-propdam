@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Component/Home";
-import Login from "./Component/Login";
-import Register from "./Component/Register";
-import CustomerService from "./Component/CustomerService";
-import Plans from "./Component/Plans";
-import Demo from "./Component/Demo";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import CustomerService from "./Pages/CustomerService";
+import Plans from "./Pages/Plans";
+import Demo from "./Pages/Demo";
 import Footer from "./Component/Footer";
-import Filter from "./Component/Filter";
+import Filter from "./Pages/Filter";
+import Subpro from "./Pages/Subpro";
+import PageNotFound from "./Pages/PageNotFound";
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         <Route path="/demo" element={<Demo />} />
         <Route path="/Filter" element={<Filter />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/Subpro" element={<Subpro />} />
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,18 +1,20 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Demoo = ({ property }) => {
+const Property = ({ property }) => {
+
     const { location, name, price, pricePerSqft, size, superBuiltUpArea, photo } = property;
+
 
     return (
         <div className="flex mt-3">
             <div className="img-card">
                 <div className="card-pic">
-                    <img src={photo} alt="" className="img-fluid" srcSet="" /> {/* Use the photo property here */}
+                    <img src={photo} alt="" className="img-fluid" />
                 </div>
             </div>
             <div className="card-information">
-                <Link to="#">{location}</Link>
+                <Link to="/subpro">{location}</Link>
                 <p>{name}</p>
                 <div className="flex gap">
                     <div>
@@ -31,7 +33,7 @@ const Demoo = ({ property }) => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Demoo;
+export default Property

@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import '../Style/Subpro.css';
-import Navbar from './Navbar';
+import Navbar from '../Component/Navbar2';
+import Footer from '../Component/Footer';
+
 function Subpro() {
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
+
     return (
         <>
             <Navbar />
@@ -22,7 +29,7 @@ function Subpro() {
                 </div>
                 <div className='box-area'>
                     <div className='box-img'>
-                        <img src={require('../Assets/first.jpeg')} alt="" className='img-fluid' srcset="" />
+                        <img src={require('../Assets/first.jpeg')} alt="" className='img-fluid'/>
                     </div>
                     <div>
                         <h2>advertisment area</h2>
@@ -39,7 +46,7 @@ function Subpro() {
             <div className="container12">
                 <div className='img-area'>
                     <div className='img-box'>
-                        <img src={require('../Assets/bagroom.jpg')} alt="" className='img-fluid' srcset="" />
+                        <img src={require('../Assets/badroom.jpeg')} alt="" className='img-fluid'/>
                     </div>
                     <div>
                         <h1>hello</h1>
@@ -47,7 +54,7 @@ function Subpro() {
                 </div>
                 <div className='box-area'>
                     <div className='box-img'>
-                        <img src={require('../Assets/first.jpeg')} alt="" className='img-fluid' srcset="" />
+                        <img src={require('../Assets/first.jpeg')} alt="" className='img-fluid'/>
                     </div>
                     <div>
                         <h2>advertisment area</h2>
@@ -135,6 +142,7 @@ function Subpro() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

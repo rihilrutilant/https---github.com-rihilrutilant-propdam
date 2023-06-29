@@ -1,9 +1,14 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React, { useEffect } from "react";
+import Navbar from "../Component/Navbar";
 import "../Style/Plans.css";
-import Footer from "./Footer";
+import Footer from "../Component/Footer";
 
 const Plans = () => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <>
       <Navbar />

@@ -52,7 +52,6 @@
     width: 100%;
     gap: 5px;
     margin-top: 12px;
-    align-items: baseline;
 }
 
 .form-group {
@@ -131,6 +130,7 @@
 
     .selectbox {
         font-size: 12px;
+        height: 38px;
     }
 
     .search-p {
@@ -148,16 +148,24 @@
         height: 38px;
     }
 
-    .selectbox {
-        height: 50px;
-    }
-
     .upper-home {
         gap: 5px !important;
+        max-width: 330px !important;
     }
 
     .search-p {
         max-width: 275px;
+    }
+}
+
+@media (max-width: 488px) {
+    .selectbox {
+
+        height: 38px;
+        /* padding: 4px; */
+        font-size: 10px;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -174,7 +182,7 @@
 .upper-home {
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: baseline;
     width: 100%;
     max-width: 460px;
 }
