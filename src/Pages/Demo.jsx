@@ -1,100 +1,54 @@
 import React, { useState } from 'react';
-import PropertyCard from './Demoo';
+import axios from 'axios';
+import apiConst from '../ApiKeys';
 
 const Demo = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [propertiesPerPage] = useState(3); // Number of properties to display per page
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobile, setMobile] = useState('');
 
-  // Assuming you have an array of property data
-  const properties = [
-    {
-      id: 1,
-      location: 'sector 42 gurugram',
-      name: 'adani m2k oyster grande',
-      price: '1.80 Lac',
-      pricePerSqft: '3312.00/sq/ft.',
-      size: '368 Sqyard',
-      superBuiltUpArea: '307.69 Super built-up Area',
-      photo: require('../Assets/banner.jpg')
-    },
-    {
-      id: 2,
-      location: 'sector 42 gurugram',
-      name: 'adani m2k oyster grande',
-      price: '1.80 Lac',
-      pricePerSqft: '3312.00/sq/ft.',
-      size: '368 Sqyard',
-      superBuiltUpArea: '307.69 Super built-up Area',
-      photo: require('../Assets/first.jpeg')
-    },
-    {
-      id: 3,
-      location: 'sector 42 gurugram',
-      name: 'adani m2k oyster grande',
-      price: '1.80 Lac',
-      pricePerSqft: '3312.00/sq/ft.',
-      size: '368 Sqyard',
-      superBuiltUpArea: '307.69 Super built-up Area',
-      photo: require('../Assets/ios.png')
-    },
-    {
-      id: 4,
-      location: 'sector 42 gurugram',
-      name: 'adani m2k oyster grande',
-      price: '1.80 Lac',
-      pricePerSqft: '3312.00/sq/ft.',
-      size: '368 Sqyard',
-      superBuiltUpArea: '307.69 Super built-up Area',
-      photo: require('../Assets/Play.png')
-    },
-    {
-      id: 5,
-      location: 'sector 42 gurugram',
-      name: 'adani m2k oyster grande',
-      price: '1.80 Lac',
-      pricePerSqft: '3312.00/sq/ft.',
-      size: '368 Sqyard',
-      superBuiltUpArea: '307.69 Super built-up Area',
-      photo: require('../Assets/R.png')
-    },
-    {
-      id: 6,
-      location: 'sector 42 gurugram',
-      name: 'adani m2k oyster grande',
-      price: '1.80 Lac',
-      pricePerSqft: '3312.00/sq/ft.',
-      size: '368 Sqyard',
-      superBuiltUpArea: '307.69 Super built-up Area',
-      photo: require('../Assets/second.jpeg')
-    },
-    // Add more property objects here
-  ];
+  const [otp, setOtp] = useState('');
 
-  // Logic for displaying properties
-  const indexOfLastProperty = currentPage * propertiesPerPage;
-  const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
-  const currentProperties = properties.slice(indexOfFirstProperty, indexOfLastProperty);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // Calculate total number of pages
-  const totalPages = Math.ceil(properties.length / propertiesPerPage);
+    const userData = {
+      name: name,
+      email: email,
+      moblie: mobile,
+      otp: otp
+    };
 
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    axios.post(apiConst.signup, userData)
+      .then(response => {
+        console.log('User data stored successfully:', response.data);
+        // Perform any additional actions or show success message
+      })
+      .catch(error => {
+        console.error('Error storing user data:', error);
+        // Handle error or show error message
+      });
+  };
 
   return (
     <div>
-      {currentProperties.map((property) => (
-        <PropertyCard key={property.id} property={property} />
-      ))}
-
-      {/* Pagination */}
-      <div className="pagination">
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <button key={index} onClick={() => paginate(index + 1)}>
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+        </div>
+        <div>
+          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div>
+          <input type="text" placeholder="moblie" value={mobile} onChange={(e) => setMobile(e.target.value)} />
+        </div>
+        <div>
+          <input type="text" placeholder="OTP" value={otp} onChange={(e) => setOtp(e.target.value)} />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 };

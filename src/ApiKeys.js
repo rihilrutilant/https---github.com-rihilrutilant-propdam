@@ -5,6 +5,7 @@ const apiConst = {
   signup: `${BASE_URL}user/signup`,
   login: `${BASE_URL}user/login`,
   send_otp_login: `${BASE_URL}user/send_otp_to_user_for_login`,
+  customer_service:`${BASE_URL}user/send_otp_to_user_for_login`,
 };
 
 export default apiConst;

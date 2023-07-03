@@ -8,25 +8,38 @@ import axios from 'axios';
 import apiConst from '../ApiKeys'
 
 const Login = () => {
-
+  
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
-
-
+  
+  
   //---------------------------User Login-------------
-
-  const [mobilePhone, setMobilePhone] = useState({
-    mobile: ''
-  })
-
-
-
+  
   //---------------------User Login---------------------
-
+  
   //-------------------OTP Varifications------------------
-
+  const [Mobile, setMobile] = useState('');
   const [otp, setOtp] = useState(['', '', '', '']);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      moblie: mobile,
+      otp: otp
+    };
+
+    axios.post(apiConst.login, userData)
+      .then(response => {
+        console.log('User data stored successfully:', response.data);
+        // Perform any additional actions or show success message
+      })
+      .catch(error => {
+        console.error('Error storing user data:', error);
+        // Handle error or show error message
+      });
+  };
 
   const inputRefs = useRef([]);
 
