@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../Style/Login.css'
 import Footer from '../Component/Footer'
 import Navbar from '../Component/Navbar'
-import apiConst from '../ApiKeys'
+import apiConst from "../GlobalConst/ApiKeys"
 import axios from 'axios';
 
 function Register() {
@@ -19,6 +19,8 @@ function Register() {
     const [otp, setOtp] = useState(['', '', '', '']);
     const inputRefs = useRef([]);
 
+
+    //------------------ Verify OTP --------------------- 
     const handleChange = (e, index) => {
         const value = e.target.value;
         setOtp((prevOtp) => {
@@ -48,53 +50,36 @@ function Register() {
     };
 
 
-    const handleSubmit = (e) => {
+    const handleSendOtp = (e) => {
         e.preventDefault();
+        setShowOtpInput(true);
 
-        const userData = {
-            name: name,
-            email: email,
-            moblie: mobile,
-            otp: otp
+        var data = JSON.stringify({
+            "mobile": mobile,
+            "name":name,
+        });
+        console.log(data);
+
+        var config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: apiConst.send_otp_to_user_register,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: data
         };
 
-        console.log(userData);
-
-        axios.post(apiConst.signup, userData)
-            .then(response => {
-                console.log('User data stored successfully:', response.data);
-                // Perform any additional actions or show success message
+        axios(config)
+            .then(function (response) {
+                console.log(response.data);
             })
-            .catch(error => {
-                console.error('Error storing user data:', error);
-                // Handle error or show error message
+            .catch(function (error) {
+                console.log(error);
             });
     };
 
-    const handleSendOtp = (e) => {
-            e.preventDefault();
-            setShowOtpInput(true);
-            var data = JSON.stringify({
-                "mobile": mobile,
-            });
-            console.log(data);
-            var config = {
-                method: 'post',
-                maxBodyLength: Infinity,
-                url: apiConst.send_otp_to_user_register,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                data: data
-            };
-            axios(config)
-                .then(function (response) {
-                    console.log(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        };
+
     const GetMobileNo = (e) => {
         setmobile(e.target.value)
     }
@@ -107,13 +92,12 @@ function Register() {
         setName(e.target.value)
     }
 
-    const VerifyOtp = () => {
-        // console.log(mobile)
-        // console.log(otp.join(''))
-        // alert("Your otp ok")
-        
+    const VerifyOtp = (e) => {
+        e.preventDefault();
+        console.log(mobile)
+        console.log(otp.join(''))
+        alert("Your otp ok")
         SetToken()
-        // handleSubmit();
     }
 
     const SetToken = () => {
@@ -146,9 +130,9 @@ function Register() {
                     <img src={require('../Assets/R.png')} alt="" />
                 </div>
                 <div className='form-width '>
-                    <form onSubmit={handleSubmit}>
-                        <input className='txt-mo' type="text" placeholder="Name" name='name' onChange={GetName} />
-                        <input className='txt-mo' type="email" placeholder="Email address" name='email' onChange={GetEmail} />
+                    <form onSubmit={handleSendOtp}>
+                        <input className='txt-mo' type="text" placeholder="Name" onChange={GetName} />
+                        <input className='txt-mo' type="email" placeholder="Email address" onChange={GetEmail} />
                         <input
                             className='txt-mo'
                             onChange={GetMobileNo}
@@ -205,7 +189,7 @@ function Register() {
                             </>
                             :
                             <div className='send-otp-login'>
-                                <button type='submit' className='sentopt-btn' onClick={ handleSendOtp}>Sent otp</button>
+                                <button type='submit' className='sentopt-btn'>Sent otp</button>
                             </div>
                         }
                     </form>
