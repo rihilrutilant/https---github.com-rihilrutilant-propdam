@@ -132,6 +132,11 @@
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
+.txt-mo::-webkit-inner-spin-button,
+.txt-mo::-webkit-outer-spin-button {
+    display: none;
+}
+
 .input-otp input::-webkit-inner-spin-button,
 .input-otp input::-webkit-outer-spin-button {
     display: none;

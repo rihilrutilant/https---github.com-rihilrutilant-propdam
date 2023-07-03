@@ -4,25 +4,12 @@ import { Link } from 'react-router-dom'
 import "../Style/Login.css"
 import Footer from '../Component/Footer'
 import Navbar from '../Component/Navbar'
-import axios from 'axios';
-import apiConst from '../ApiKeys'
 
 const Login = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
-
-
-  //---------------------------User Login-------------
-
-  const [mobilePhone, setMobilePhone] = useState({
-    mobile: ''
-  })
-
-
-
-  //---------------------User Login---------------------
 
   //-------------------OTP Varifications------------------
 
@@ -117,7 +104,7 @@ const Login = () => {
                 className='txt-mo'
                 onChange={GetMobileNo}
                 required
-                type="number"
+                type="text"
                 inputMode="numeric"
                 pattern="[0-9]*"
                 placeholder="Enter Mobile Number"

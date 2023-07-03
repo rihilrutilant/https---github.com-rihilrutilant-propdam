@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../Style/Login.css'
 import Footer from '../Component/Footer'
 import Navbar from '../Component/Navbar'
-import apiConst from '../ApiKeys'
+import apiConst from "../GlobalConst/ApiKeys"
 import axios from 'axios';
 
 function Register() {
@@ -19,6 +19,8 @@ function Register() {
     const [otp, setOtp] = useState(['', '', '', '']);
     const inputRefs = useRef([]);
 
+
+    //------------------ Verify OTP --------------------- 
     const handleChange = (e, index) => {
         const value = e.target.value;
         setOtp((prevOtp) => {
@@ -47,15 +49,17 @@ function Register() {
         setOtp(newOtp);
     };
 
+    //------------------ Verify OTP --------------------- 
 
-    const handleSendOtp = (e) => {
-        e.preventDefault();
+    //------------------ Send OTP --------------------- 
+
+    const registerUser = (e) => {
         setShowOtpInput(true);
-
+        e.preventDefault();
         var data = JSON.stringify({
-            "mobile": mobile,
-            "name":name,
+            "mobile": mobile
         });
+
         console.log(data);
 
         var config = {
@@ -70,13 +74,15 @@ function Register() {
 
         axios(config)
             .then(function (response) {
-                console.log(response.data);
+                console.log(response);
+                console.log(JSON.stringify(response.data));
             })
             .catch(function (error) {
                 console.log(error);
             });
     };
 
+    //------------------ Register User ---------------------
 
     const GetMobileNo = (e) => {
         setmobile(e.target.value)
@@ -92,14 +98,40 @@ function Register() {
 
     const VerifyOtp = (e) => {
         e.preventDefault();
-        console.log(mobile)
-        console.log(otp.join(''))
-        alert("Your otp ok")
-        SetToken()
-    }
+        console.log(mobile, name, email, otp)
+        const okOtp = otp.join('')
 
-    const SetToken = () => {
-        localStorage.setItem('token', '<PASSWORD>')
+        //-----api--------
+        var data = JSON.stringify({
+            "name": name,
+            "mobile": mobile,
+            "email": email,
+            "otp": okOtp
+        });
+
+        console.log(data);
+
+        var config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: apiConst.signup,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: data
+        };
+
+        axios(config)
+            .then((response) => {
+                if (response.data.authtoken) {
+                    console.log(response);
+                    localStorage.setItem('User_token', response.data.data.message);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        //-----api--------
     }
 
     function handleKeyDown(event) {
@@ -128,7 +160,7 @@ function Register() {
                     <img src={require('../Assets/R.png')} alt="" />
                 </div>
                 <div className='form-width '>
-                    <form onSubmit={handleSendOtp}>
+                    <form>
                         <input className='txt-mo' type="text" placeholder="Name" onChange={GetName} />
                         <input className='txt-mo' type="email" placeholder="Email address" onChange={GetEmail} />
                         <input
@@ -187,7 +219,7 @@ function Register() {
                             </>
                             :
                             <div className='send-otp-login'>
-                                <button type='submit' className='sentopt-btn'>Sent otp</button>
+                                <button type='submit' className='sentopt-btn' onClick={registerUser}>Sent otp</button>
                             </div>
                         }
                     </form>
